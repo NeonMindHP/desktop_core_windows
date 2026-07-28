@@ -1,0 +1,50 @@
+﻿{
+    "ClaimVisible":  false,
+    "RightPanelMode":  "system",
+    "BackgroundPath":  "C:\\Users\\DJBong.2k16\\Desktop\\Projekte Desktop\\neon-bg-grid.png",
+    "WeatherCity":  "Dresden",
+    "Shortcuts":  [
+                      {
+                          "Name":  "Dieser PC",
+                          "Kind":  "Shell",
+                          "Target":  "shell:MyComputerFolder",
+                          "Glyph":  "▣"
+                      },
+                      {
+                          "Name":  "Downloads",
+                          "Kind":  "Folder",
+                          "Target":  "C:\\Users\\DJBong.2k16\\Downloads",
+                          "Glyph":  "↓"
+                      },
+                      {
+                          "Name":  "Projekte",
+                          "Kind":  "Folder",
+                          "Target":  "E:\\Projekte",
+                          "Glyph":  "◇"
+                      },
+                      {
+                          "Name":  "Fundsachen",
+                          "Kind":  "Folder",
+                          "Target":  "E:\\Fundsachen",
+                          "Glyph":  "◇"
+                      },
+                      {
+                          "Name":  "Verschollen",
+                          "Kind":  "Folder",
+                          "Target":  "E:\\Verschollen",
+                          "Glyph":  "◇"
+                      },
+                      {
+                          "Name":  "Projekte Desktop",
+                          "Kind":  "Folder",
+                          "Target":  "C:\\Users\\DJBong.2k16\\Desktop\\Projekte Desktop",
+                          "Glyph":  "◇"
+                      },
+                      {
+                          "Name":  "Videos",
+                          "Kind":  "Folder",
+                          "Target":  "C:\\Users\\DJBong.2k16\\Videos",
+                          "Glyph":  "◇"
+                      }
+                  ]
+}

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeonMind Desktop Core – Test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="desktop" id="desktop">
+    <div class="ambient ambient--cyan"></div>
+    <div class="ambient ambient--pink"></div>
+    <div class="grid"></div>
+    <div class="data-stream" aria-hidden="true">
+      <span>DATA LINK ONLINE</span>
+      <span>NEONMIND CORE</span>
+      <span>SYSTEM READY</span>
+      <span>DESKTOP ENGINE</span>
+    </div>
+
+    <header class="taskbar">
+      <button class="brand action" data-action="start" aria-label="NeonMind Startmenü">
+        <img src="assets/neonmind-logo.png" alt="">
+        <span>neonmind-desktop.core</span>
+      </button>
+
+      <nav class="taskbar__nav" aria-label="Desktop-Navigation">
+        <button class="action nav-icon is-active" data-action="home" title="Desktop" aria-label="Desktop">⌂</button>
+        <button class="action nav-icon" data-action="apps" title="Apps" aria-label="Apps">▦</button>
+        <span class="pinned-apps" id="pinnedApps" aria-label="Angeheftete Programme"></span>
+        <span class="running-apps" id="runningApps" aria-label="Geöffnete Windows-Fenster"></span>
+        <button class="action nav-icon" data-action="explorer" title="Explorer" aria-label="Explorer">▣</button>
+        <button class="action nav-icon" data-action="gallery" title="Gallery" aria-label="Gallery">◫</button>
+        <button class="action nav-icon" data-action="settings" title="Einstellungen" aria-label="Einstellungen">⚙</button>
+      </nav>
+
+      <div class="taskbar__system">
+        <div class="sound" aria-label="Lautstärke">
+          <span>♫</span>
+          <input id="volumeSlider" type="range" min="0" max="100" value="50" aria-label="Windows-Lautstärke">
+        </div>
+        <button class="media-play" data-host-action="playpause" aria-label="Wiedergabe oder Pause">▶/Ⅱ</button>
+        <button class="core-toggle action is-on" data-action="core"><i></i><span>CORE ON</span></button>
+        <button class="app-exit" data-host-action="app-exit" title="NeonMind Desktop Core beenden" aria-label="Programm beenden">⏻</button>
+      </div>
+    </header>
+
+    <main class="desktop-stage">
+      <aside class="shortcut-rail" id="shortcutRail" aria-label="Desktop-Verknüpfungen">
+        <button class="layout-drag-handle shortcut-drag-handle" title="Schnellleiste verschieben">⠿</button>
+        <button class="shortcut action" data-action="explorer"><i>▣</i><span>Dieser PC</span></button>
+        <button class="shortcut action" data-folder="Bilder"><i>◇</i><span>Bilder</span></button>
+        <button class="shortcut action" data-folder="Downloads"><i>↓</i><span>Downloads</span></button>
+        <button class="shortcut action" data-folder="Projekte"><i>⌘</i><span>Projekte</span></button>
+        <button class="shortcut action" data-action="trash"><i>♲</i><span>Papierkorb</span></button>
+      </aside>
+
+      <section class="desktop-icon-layer" id="desktopIconLayer" aria-label="Windows-Desktop-Dateien"></section>
+
+      <section class="reactor-zone" id="reactorZone" aria-label="NeonMind Desktop Reactor">
+        <button class="layout-drag-handle reactor-drag-handle" title="Reactor verschieben">⠿</button>
+        <div class="reactor">
+          <div class="reactor__halo"></div>
+          <div class="reactor__orbit reactor__orbit--outer"><i></i><b></b></div>
+          <div class="reactor__orbit reactor__orbit--inner"><i></i><b></b></div>
+          <video autoplay muted loop playsinline poster="assets/neonmind-logo.png">
+            <source src="assets/neonmind-hero-logo-cropped.mp4" type="video/mp4">
+          </video>
+          <div class="reactor__theme-art" aria-hidden="true">
+            <i class="reactor__theme-layer reactor__theme-layer--outer"></i>
+            <i class="reactor__theme-layer reactor__theme-layer--core"></i>
+            <i class="reactor__theme-smoke"></i>
+          </div>
+          <div class="reactor__status"><span></span> CORE ENGINE · ACTIVE <span></span></div>
+        </div>
+      </section>
+
+      <section class="message-zone" aria-live="polite">
+        <span class="eyebrow"><i></i> NEONMIND DESKTOP</span>
+        <div class="message" id="message">
+          <h1>Dein Windows.<br><em>Nur deutlich geiler.</em></h1>
+          <p>Ein Desktop-Core für Programme, Ordner und Projekte – klar, direkt und ohne langweiligen Standardlook.</p>
+        </div>
+        <div class="quick-actions">
+          <button class="primary action" data-action="apps">Apps öffnen <span>→</span></button>
+          <button class="ghost action" data-action="fullscreen">Vollbild testen</button>
+        </div>
+        <div class="system-facts">
+          <span><i></i> Desktop Engine</span>
+          <span><i></i> Reaktor aktiv</span>
+          <span><i></i> Demo-Modus</span>
+        </div>
+      </section>
+
+      <section class="widget-zone" id="widgetZone" hidden>
+        <header class="widget-header">
+          <div class="widget-header__top">
+            <span><i></i> NEONMIND WIDGET CORE</span>
+            <div class="widget-window-actions">
+              <button data-host-action="widget-dock" title="Widget wieder einrasten">◇</button>
+              <button data-host-action="widget-close" title="Widget schließen">×</button>
+            </div>
+          </div>
+          <nav>
+            <button data-widget="system" class="is-active">System</button>
+            <button data-widget="music">Musik</button>
+            <button data-widget="calendar">Kalender</button>
+            <button data-widget="notifications">Meldungen</button>
+            <button data-widget="ai">KI Chat</button>
+            <button data-widget="weather">Wetter</button>
+            <button data-widget="social">Social</button>
+            <button data-widget="news">Weltnews</button>
+          </nav>
+        </header>
+        <div class="widget-view is-active" data-widget-view="system">
+          <div class="widget-title"><strong>Systemübersicht</strong><small id="widgetSystemState">CORE ONLINE</small></div>
+          <div class="widget-metrics">
+            <button data-host-action="task-manager"><span>CPU</span><strong id="widgetCpu">--%</strong><i><b id="widgetCpuBar"></b></i></button>
+            <button data-host-action="task-manager"><span>RAM</span><strong id="widgetRam">--%</strong><i><b id="widgetRamBar"></b></i></button>
+          </div>
+          <div class="widget-list" id="driveList"></div>
+          <button class="widget-primary" data-host-action="open-explorer">NeonMind Explorer öffnen →</button>
+          <div class="power-controls">
+            <button data-host-action="session-logout" title="Abmelden">⇥<span>Abmelden</span></button>
+            <button data-host-action="session-restart" title="Neustarten">↻<span>Neustart</span></button>
+            <button data-host-action="session-shutdown" title="Herunterfahren">⏻<span>Aus</span></button>
+          </div>
+        </div>
+        <div class="widget-view" data-widget-view="music">
+          <div class="music-orb">♫</div>
+          <strong>Windows Media Core</strong>
+          <small id="mediaActiveLabel">Kein aktiver Titel oder Player erkannt.</small>
+          <div class="music-controls">
+            <button data-host-action="media-previous">◀</button>
+            <button data-host-action="playpause">▶/Ⅱ</button>
+            <button data-host-action="media-next">▶</button>
+            <button data-host-action="media-mute">♪×</button>
+          </div>
+          <label class="widget-volume">
+            <span>LAUTSTÄRKE</span>
+            <input id="widgetVolumeSlider" type="range" min="0" max="100" value="50" aria-label="Windows-Lautstärke im Musik-Widget">
+            <strong id="widgetVolumeValue">50%</strong>
+          </label>
+          <div class="playlist-actions">
+            <button data-playlist-pick="files">＋ Musik hinzufügen</button>
+            <button data-playlist-pick="folder">▣ Musikordner</button>
+          </div>
+          <input id="playlistFileInput" type="file" accept="audio/*" multiple hidden>
+          <input id="playlistFolderInput" type="file" accept="audio/*" webkitdirectory multiple hidden>
+          <audio id="playlistAudio" preload="metadata"></audio>
+          <div class="playlist-now" id="playlistNow">Noch keine eigene Musik geladen</div>
+          <div class="playlist-list" id="playlistList"></div>
+        </div>
+        <div class="widget-view" data-widget-view="calendar">
+          <div class="calendar-mode">
+            <button class="is-active" data-calendar-mode="day">Heute</button>
+            <button data-calendar-mode="month">Monat</button>
+          </div>
+          <div class="calendar-day-view" id="calendarDayView">
+            <div class="calendar-day" id="calendarDay">--</div>
+            <strong id="calendarWeekday">---</strong>
+            <span id="calendarMonth">---</span>
+            <small id="calendarFullDate">--.--.----</small>
+          </div>
+          <div class="calendar-month-view" id="calendarMonthView" hidden>
+            <div class="calendar-toolbar">
+              <button data-calendar-nav="-1" title="Voriger Monat">‹</button>
+              <strong id="calendarTitle">---</strong>
+              <button data-calendar-nav="1" title="Nächster Monat">›</button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+            <div class="calendar-event-head"><strong>Termine</strong><button id="calendarAdd">＋ Termin</button></div>
+            <div class="calendar-event-list" id="calendarEventList"></div>
+          </div>
+        </div>
+        <div class="widget-view" data-widget-view="notifications">
+          <div class="widget-title"><strong>Meldungszentrale</strong><small>CORE + WINDOWS</small></div>
+          <div class="notification-filters">
+            <button class="is-active" data-notification-filter="all">Alle</button>
+            <button data-notification-filter="core">Core</button>
+            <button data-notification-filter="windows">Windows</button>
+          </div>
+          <div class="notification-list" id="notificationList"></div>
+        </div>
+        <div class="widget-view widget-ai-view" data-widget-view="ai">
+          <img src="assets/neonmind-logo.png" alt="">
+          <small>NEONMIND DEMO ASSISTANT · LOKAL</small>
+          <h2>Deine KI.<br><em>Direkt im Core.</em></h2>
+          <div class="ai-chat-log" id="aiChatLog">
+            <div class="ai-bubble ai-bubble--bot">Moin! Ich bin der lokale Core-Assistent. Frag mich nach Uhrzeit, Datum, System, Wetter oder Updates.</div>
+          </div>
+          <form class="ai-chat-form" id="aiChatForm">
+            <input id="aiChatInput" maxlength="240" autocomplete="off" placeholder="Nachricht an den Core …">
+            <button>Senden</button>
+          </form>
+          <button class="ai-open-chatgpt" data-host-action="open-chatgpt">Persönliches ChatGPT öffnen <span>→</span></button>
+          <label><i></i> Demo lokal · echtes ChatGPT nutzt dein eigenes Konto</label>
+        </div>
+        <div class="widget-view widget-weather-view" data-widget-view="weather">
+          <div class="widget-title"><strong>Wetter Core</strong><small>OPEN-METEO LIVE</small></div>
+          <form id="weatherForm" class="weather-search">
+            <input id="weatherCity" type="text" placeholder="Ort eingeben …" maxlength="80">
+            <button>Aktualisieren</button>
+          </form>
+          <div class="weather-current">
+            <span id="weatherIcon">◌</span>
+            <div><strong id="weatherTemperature">--°</strong><small id="weatherDescription">Wetter wird geladen</small></div>
+          </div>
+          <div class="weather-location" id="weatherLocation">---</div>
+          <div class="weather-facts">
+            <span>GEFÜHLT <strong id="weatherFeels">--°</strong></span>
+            <span>WIND <strong id="weatherWind">-- km/h</strong></span>
+            <span>HEUTE <strong id="weatherRange">--° / --°</strong></span>
+          </div>
+        </div>
+        <div class="widget-view widget-social-view" data-widget-view="social">
+          <div class="widget-title"><strong>Social Media Core</strong><small>DEINE KONTEN</small></div>
+          <p>Öffnet den gewählten Dienst sicher in deinem Standardbrowser. Deine Anmeldung bleibt ausschließlich beim jeweiligen Anbieter.</p>
+          <div class="social-grid">
+            <button data-social-url="https://web.whatsapp.com/"><i>◉</i><span>WhatsApp</span><small>Nachrichten öffnen</small></button>
+            <button data-social-url="https://www.facebook.com/messages/"><i>f</i><span>Facebook</span><small>Messenger öffnen</small></button>
+            <button data-social-url="https://www.instagram.com/direct/inbox/"><i>◎</i><span>Instagram</span><small>Direct öffnen</small></button>
+            <button data-social-url="https://www.tiktok.com/messages"><i>♪</i><span>TikTok</span><small>Nachrichten öffnen</small></button>
+          </div>
+        </div>
+        <div class="widget-view widget-news-view" data-widget-view="news">
+          <div class="widget-title"><strong>Weltnews Core</strong><small>AKTUELLE MELDUNGEN</small></div>
+          <div class="news-list" id="newsList"><div class="notification-item">Nachrichten werden geladen …</div></div>
+          <div class="news-footer"><span>Quelle: tagesschau.de</span><button data-host-action="news-refresh">↻ Aktualisieren</button></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="energy-footer">
+      <div class="energy-footer__line"><i></i><span class="energy-node"></span></div>
+      <section class="lower-status">
+        <button data-host-action="task-manager"><span>CPU</span><strong id="cpuValue">18%</strong><i><b style="width:18%"></b></i></button>
+        <button data-host-action="task-manager"><span>RAM</span><strong id="ramValue">--%</strong><i><b id="ramBar" style="width:43%"></b></i></button>
+        <div class="core-status"><span>CORE</span><strong>STABIL</strong><i><b></b></i></div>
+        <button id="restoreExplorerButton" data-host-action="explorer-restore" title="Explorer wiederherstellen" hidden>▤</button>
+      </section>
+      <div class="energy-footer__meta">
+        <a class="footer-brand-link" href="https://neonmind-ai.com" data-host-action="open-website">© by NeonMind-AI.com</a>
+        <div class="footer-meta-right">
+          <button class="update-indicator" id="updateIndicator" hidden>⬆ UPDATE</button>
+          <span class="footer-clock"><strong id="clock">--:--</strong><small id="footerDay">---</small><small id="date">--.--.----</small></span>
+        </div>
+      </div>
+    </footer>
+
+    <section class="panel start-panel" id="startPanel" aria-hidden="true">
+      <header><span><i></i> NEONMIND START</span><button class="panel-close">×</button></header>
+      <div class="start-panel__search">⌕ <input type="text" placeholder="Apps, Ordner und Einstellungen suchen …"></div>
+      <div class="start-grid">
+        <button data-action="explorer"><i>▣</i><span>Explorer</span></button>
+        <button data-action="gallery"><i>◫</i><span>Gallery</span></button>
+        <button data-folder="Projekte"><i>⌘</i><span>Projekte</span></button>
+        <button data-action="settings"><i>⚙</i><span>Settings</span></button>
+        <button data-folder="Downloads"><i>↓</i><span>Downloads</span></button>
+        <button data-action="trash"><i>♲</i><span>Papierkorb</span></button>
+      </div>
+      <section class="start-pins">
+        <strong>TASKLEISTE ANPASSEN</strong>
+        <div>
+          <button data-pin-toggle="explorer">▣ Explorer</button>
+          <button data-pin-toggle="browser">◎ Browser</button>
+          <button data-pin-toggle="downloads">↓ Downloads</button>
+          <button data-pin-toggle="settings">⚙ Einstellungen</button>
+        </div>
+      </section>
+      <footer>
+        <span>Markus · NeonMind</span>
+        <div class="start-power">
+          <button data-host-action="session-logout" title="Abmelden">⇥</button>
+          <button data-host-action="session-restart" title="Neustarten">↻</button>
+          <button data-host-action="session-shutdown" title="Herunterfahren">⏻</button>
+        </div>
+      </footer>
+    </section>
+
+    <section class="panel window-panel" id="windowPanel" aria-hidden="true">
+      <header>
+        <span id="windowTitle"><i></i> NEONMIND EXPLORER</span>
+        <div>
+          <button class="window-minimize" data-host-action="explorer-minimize" title="Minimieren">–</button>
+          <button class="window-maximize" data-host-action="explorer-maximize" title="Maximieren">□</button>
+          <button class="panel-close" data-host-action="explorer-close" title="Schließen">×</button>
+        </div>
+      </header>
+      <div class="window-toolbar">
+        <button data-host-action="explorer-back" title="Zurück">←</button>
+        <button data-host-action="explorer-refresh" title="Aktualisieren">↻</button>
+        <button data-host-action="explorer-up" title="Eine Ebene höher">↑</button>
+        <div id="windowPath">Dieser PC</div>
+        <button data-host-action="explorer-new-folder" title="Neuer Ordner">＋</button>
+        <button data-host-action="explorer-view-large" title="Große Symbole">▦</button>
+        <button data-host-action="explorer-view-list" title="Liste">☷</button>
+        <button data-host-action="explorer-view-details" title="Details">▤</button>
+      </div>
+      <div class="window-content">
+        <nav>
+          <button data-folder="Dieser PC">▣ Dieser PC</button>
+          <button data-folder="Bilder">◇ Bilder</button>
+          <button data-folder="Downloads">↓ Downloads</button>
+          <button data-folder="Projekte">⌘ Projekte</button>
+          <button data-folder="Papierkorb">♲ Papierkorb</button>
+        </nav>
+        <div class="files" id="files"></div>
+      </div>
+    </section>
+
+    <div class="explorer-context-menu" id="explorerContextMenu" hidden>
+      <button data-host-action="explorer-open-selected">Öffnen</button>
+      <button data-host-action="explorer-show-windows">Im Windows-Explorer anzeigen</button>
+      <button data-host-action="explorer-terminal">Im Terminal öffnen</button>
+      <button data-host-action="explorer-open-with" data-file-only>Öffnen mit …</button>
+      <button data-host-action="explorer-print" data-file-only>Drucken</button>
+      <hr>
+      <button data-host-action="explorer-cut" data-mutable>Ausschneiden</button>
+      <button data-host-action="explorer-copy">Kopieren</button>
+      <button data-host-action="explorer-paste-into" data-folder-only>In diesen Ordner einfügen</button>
+      <button data-host-action="explorer-shortcut">Verknüpfung erstellen</button>
+      <button data-host-action="explorer-set-background" data-image-only>Als Desktophintergrund festlegen</button>
+      <hr>
+      <button data-host-action="explorer-rename" data-mutable>Umbenennen</button>
+      <button data-host-action="explorer-move" data-mutable>Verschieben …</button>
+      <button data-host-action="explorer-delete" data-mutable>In Papierkorb</button>
+      <button data-host-action="explorer-properties">Eigenschaften</button>
+      <button data-host-action="remove-pinned-shortcut" data-pinned-only>Aus NeonMind-Leiste entfernen</button>
+    </div>
+
+    <div class="explorer-context-menu desktop-context-menu" id="desktopContextMenu" hidden>
+      <strong>ANSICHT</strong>
+      <button data-host-action="desktop-size-large">Große Symbole</button>
+      <button data-host-action="desktop-size-medium">Mittelgroße Symbole</button>
+      <button data-host-action="desktop-size-small">Kleine Symbole</button>
+      <strong>SORTIEREN NACH</strong>
+      <button data-host-action="desktop-sort-name">Name</button>
+      <button data-host-action="desktop-sort-type">Typ</button>
+      <button data-host-action="desktop-sort-date">Änderungsdatum</button>
+      <hr>
+      <button data-host-action="desktop-auto-arrange" id="desktopAutoArrange">○ Symbole automatisch anordnen</button>
+      <button data-host-action="desktop-align-grid" id="desktopAlignGrid">✓ Symbole am Raster ausrichten</button>
+      <button data-host-action="desktop-files-toggle" id="desktopShowIcons">✓ Desktopsymbole anzeigen</button>
+      <hr>
+      <button data-host-action="desktop-refresh">Aktualisieren</button>
+      <button data-host-action="desktop-paste">Einfügen</button>
+      <button data-host-action="desktop-new-folder">Neuer Ordner</button>
+      <hr>
+      <button data-host-action="display-settings">Anzeigeeinstellungen</button>
+      <button data-host-action="personalization-settings">Anpassen</button>
+    </div>
+
+    <div class="explorer-context-menu task-app-menu" id="taskAppMenu" hidden>
+      <strong id="taskAppTitle">WINDOWS-PROGRAMM</strong>
+      <button data-task-window-action="focus">Aktivieren</button>
+      <button data-task-window-action="minimize">Minimieren</button>
+      <hr>
+      <button data-task-window-action="close">Fenster schließen</button>
+    </div>
+
+    <div class="toast" id="toast"><i></i><span></span></div>
+  </div>
+  <script src="app.js"></script>
+  <script src="host.js"></script>
+</body>
+</html>
