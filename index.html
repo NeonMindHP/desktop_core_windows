@@ -7,7 +7,57 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main id="desktop-core" aria-label="NeonMind Desktop Core"></main>
+  <div class="desktop" id="desktop">
+    <header class="core-header">
+      <button class="brand" data-section="desktop" aria-label="NeonMind Desktop">
+        <img src="assets/neonmind-logo.png" alt="">
+        <span>NEONMIND CORE</span>
+      </button>
+
+      <nav class="core-nav" aria-label="Hauptnavigation">
+        <button class="nav-item is-active" data-section="desktop">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>
+          <span>DESKTOP</span>
+        </button>
+        <button class="nav-item" data-section="explorer">
+          <svg viewBox="0 0 24 24"><path d="M3 6.5h7l2 2h9v10.5H3z"/><path d="M3 6.5V5h7l2 2"/></svg>
+          <span>EXPLORER</span>
+        </button>
+        <button class="nav-item" data-section="browser">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+          <span>BROWSER</span>
+        </button>
+        <button class="nav-item" data-section="settings">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 13.5v-3l-2-.7-.7-1.7.9-1.9-2.1-2.1-1.9.9-1.7-.7-.7-2h-3l-.7 2-1.7.7-1.9-.9-2.1 2.1.9 1.9-.7 1.7-2 .7v3l2 .7.7 1.7-.9 1.9 2.1 2.1 1.9-.9 1.7.7.7 2h3l.7-2 1.7-.7 1.9.9 2.1-2.1-.9-1.9.7-1.7z"/></svg>
+          <span>EINSTELLUNGEN</span>
+        </button>
+        <button class="nav-item" data-section="apps">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+          <span>APPS</span>
+        </button>
+      </nav>
+
+      <div class="clock-panel">
+        <strong id="clockTime">--:--</strong>
+        <span id="clockDate">---</span>
+      </div>
+
+      <div class="power-zone">
+        <i class="pulse-slash" aria-hidden="true"></i>
+        <button class="power-button" id="powerButton" title="NeonMind Desktop Core beenden" aria-label="Core beenden">
+          <svg viewBox="0 0 24 24"><path d="M12 2v9"/><path d="M6.3 5.7a8 8 0 1 0 11.4 0"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="workspace-view is-active" data-view="desktop"></section>
+      <section class="workspace-view" data-view="explorer"><div class="placeholder">EXPLORER CORE</div></section>
+      <section class="workspace-view" data-view="browser"><div class="placeholder">BROWSER CORE</div></section>
+      <section class="workspace-view" data-view="settings"><div class="placeholder">EINSTELLUNGEN</div></section>
+      <section class="workspace-view" data-view="apps"><div class="placeholder">APPS</div></section>
+    </main>
+  </div>
   <script src="app.js"></script>
   <script src="host.js"></script>
 </body>
