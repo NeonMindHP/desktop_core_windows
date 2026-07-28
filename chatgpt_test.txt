@@ -1,3 +1,0 @@
-GitHub write-access test for ChatGPT.
-Repository: NeonMindHP/desktop_core_windows
-Purpose: create and delete verification.
