@@ -30,7 +30,7 @@
     autoTimer = null;
   };
 
-  const scheduleAutoStep = (delay = 950) => {
+  const scheduleAutoStep = (delay = 1350) => {
     stopAuto();
     autoTimer = setTimeout(runAutoStep, delay);
   };
@@ -43,7 +43,7 @@
     else if (autoIndex === 0) autoDirection = 1;
 
     autoIndex += autoDirection;
-    scheduleAutoStep(1050);
+    scheduleAutoStep(1450);
   };
 
   const resumeAutoLater = () => {
@@ -100,7 +100,7 @@
 
   requestAnimationFrame(() => {
     moveLineTo(navItems[0]);
-    scheduleAutoStep(1050);
+    scheduleAutoStep(1450);
   });
 
   window.addEventListener("resize", () => {
