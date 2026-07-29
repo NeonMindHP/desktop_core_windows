@@ -49,13 +49,13 @@ button{font:inherit}
 .nav-item span{font-size:13px;font-weight:600;letter-spacing:.035em;white-space:nowrap}
 .nav-item:hover:before,.nav-item.is-preview:before{
   background:
-    linear-gradient(67deg,transparent 0 42%,rgba(255,28,35,.20) 44% 56%,transparent 58%) left top/35px 100% no-repeat,
-    linear-gradient(67deg,transparent 0 47%,rgba(255,70,76,.98) 48.5% 51.5%,transparent 53%) left top/31px 100% no-repeat,
-    radial-gradient(ellipse 100% 72% at 43% 112%,rgba(255,27,35,.76) 0%,rgba(255,22,29,.31) 34%,rgba(112,10,14,.17) 54%,transparent 75%),
-    linear-gradient(180deg,rgba(74,17,19,.49),rgba(18,5,6,.81)),
-    repeating-linear-gradient(118deg,rgba(255,255,255,.026) 0 1px,transparent 1px 15px);
-  box-shadow:inset 0 -2px 0 rgba(255,73,79,.70),inset 0 -18px 30px rgba(255,20,27,.24),inset 0 1px 0 rgba(255,255,255,.055);
-  filter:drop-shadow(0 8px 10px rgba(255,18,25,.14))
+    linear-gradient(67deg,transparent 0 43%,rgba(255,24,31,.10) 45% 56%,transparent 58%) left top/36px 100% no-repeat,
+    linear-gradient(67deg,transparent 0 48%,rgba(255,50,56,.74) 49% 51.5%,transparent 53%) left top/31px 100% no-repeat,
+    radial-gradient(ellipse 98% 60% at 48% 108%,rgba(255,24,31,.56) 0%,rgba(255,20,27,.24) 35%,rgba(110,9,13,.10) 55%,transparent 77%),
+    linear-gradient(180deg,rgba(56,13,15,.28),rgba(15,4,5,.77)),
+    repeating-linear-gradient(118deg,rgba(255,255,255,.024) 0 1px,transparent 1px 15px);
+  box-shadow:inset 0 -1px 0 rgba(255,70,76,.48),inset 0 -17px 28px rgba(255,20,27,.18),inset 0 1px 0 rgba(255,255,255,.045);
+  filter:drop-shadow(0 7px 9px rgba(255,18,25,.11))
 }
 .nav-item.is-active:before{
   background:
@@ -65,24 +65,24 @@ button{font:inherit}
 }
 .nav-item.is-active:hover:before,.nav-item.is-active.is-preview:before{
   background:
-    linear-gradient(67deg,transparent 0 42%,rgba(255,28,35,.20) 44% 56%,transparent 58%) left top/35px 100% no-repeat,
-    linear-gradient(67deg,transparent 0 47%,rgba(255,70,76,.98) 48.5% 51.5%,transparent 53%) left top/31px 100% no-repeat,
-    radial-gradient(ellipse 100% 72% at 43% 112%,rgba(255,27,35,.76) 0%,rgba(255,22,29,.31) 34%,rgba(112,10,14,.17) 54%,transparent 75%),
-    linear-gradient(180deg,rgba(74,17,19,.49),rgba(18,5,6,.81)),
-    repeating-linear-gradient(118deg,rgba(255,255,255,.026) 0 1px,transparent 1px 15px)
+    linear-gradient(67deg,transparent 0 43%,rgba(255,24,31,.10) 45% 56%,transparent 58%) left top/36px 100% no-repeat,
+    linear-gradient(67deg,transparent 0 48%,rgba(255,50,56,.74) 49% 51.5%,transparent 53%) left top/31px 100% no-repeat,
+    radial-gradient(ellipse 98% 60% at 48% 108%,rgba(255,24,31,.56) 0%,rgba(255,20,27,.24) 35%,rgba(110,9,13,.10) 55%,transparent 77%),
+    linear-gradient(180deg,rgba(56,13,15,.28),rgba(15,4,5,.77)),
+    repeating-linear-gradient(118deg,rgba(255,255,255,.024) 0 1px,transparent 1px 15px)
 }
 
 .activity-line{
-  position:absolute;z-index:65;left:0;top:62px;height:4px;width:120px;pointer-events:none;overflow:visible;
-  clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
-  background:linear-gradient(180deg,#ffd0d2 0%,#ff4148 28%,#ff171f 63%,#a90007 100%);
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);
-  box-shadow:0 0 3px #ff1c24,0 0 10px rgba(255,25,32,.95),0 -8px 15px rgba(255,22,29,.62),0 -19px 27px rgba(255,18,25,.28);
-  filter:drop-shadow(0 -5px 5px rgba(255,32,38,.72));
+  position:absolute;z-index:80;left:0;top:61px;height:4px;width:120px;pointer-events:none;overflow:visible;
+  clip-path:polygon(6% 0,100% 0,96% 100%,0 100%);
+  background:linear-gradient(180deg,#ff7479 0%,#ff3239 24%,#f50b14 62%,#ad0007 100%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 6%,#000 94%,transparent 100%);
+  box-shadow:0 0 3px rgba(255,20,28,.98),0 0 9px rgba(255,20,28,.82);
+  filter:drop-shadow(0 0 2px rgba(255,35,42,.98)) drop-shadow(0 -5px 6px rgba(255,22,29,.70)) drop-shadow(0 -12px 12px rgba(255,18,25,.28));
   transition:transform .72s cubic-bezier(.22,.74,.22,1),width .72s cubic-bezier(.22,.74,.22,1),opacity .15s ease;will-change:transform,width
 }
-.activity-line:before{content:"";position:absolute;left:8%;right:8%;top:0;height:1px;background:rgba(255,244,244,.92);box-shadow:0 0 3px rgba(255,220,222,.95)}
-.activity-line:after{content:"";position:absolute;z-index:-1;left:7%;right:7%;bottom:1px;height:30px;background:linear-gradient(0deg,rgba(255,18,25,.52),rgba(255,18,25,.18) 42%,transparent 100%);filter:blur(7px);transform:translateY(2px)}
+.activity-line:before{content:"";position:absolute;left:6%;right:6%;top:0;height:1px;background:rgba(255,150,154,.88);box-shadow:0 0 2px rgba(255,95,101,.86)}
+.activity-line:after{content:"";position:absolute;left:7%;right:7%;top:-8px;height:10px;background:linear-gradient(0deg,rgba(255,20,27,.22),transparent);filter:blur(5px);pointer-events:none}
 
 .clock-panel{
   width:270px;min-width:270px;height:var(--panel-h);position:relative;z-index:4;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding:0 52px 0 40px;text-align:right;overflow:visible;
@@ -102,7 +102,7 @@ button{font:inherit}
     linear-gradient(110deg,rgba(28,29,31,.68),rgba(12,8,9,.82)),
     repeating-linear-gradient(118deg,rgba(255,255,255,.022) 0 1px,transparent 1px 15px)
 }
-.pulse-slash{position:absolute;z-index:8;left:-4px;width:3px;height:46px;top:9px;transform:skewX(var(--separator-angle));background:linear-gradient(180deg,#ff8b90 0%,#ff252d 34%,#d90009 100%);box-shadow:0 0 4px #ff252c,0 0 12px rgba(255,25,30,.95),0 0 25px rgba(255,20,27,.58);animation:slashPulse 1.35s ease-in-out infinite}
+.pulse-slash{position:absolute;z-index:8;left:-3.25px;width:3px;height:46px;top:9px;transform:skewX(var(--separator-angle));background:linear-gradient(180deg,#ff8b90 0%,#ff252d 34%,#d90009 100%);box-shadow:0 0 4px #ff252c,0 0 12px rgba(255,25,30,.95),0 0 25px rgba(255,20,27,.58);animation:slashPulse 1.35s ease-in-out infinite}
 .pulse-slash:after{content:"";position:absolute;inset:-6px -7px;background:rgba(255,18,25,.28);filter:blur(7px);z-index:-1}
 .power-button{width:52px;height:52px;display:grid;place-items:center;color:#ff4147;position:relative;transform:translateX(9px);background:transparent}
 .power-button svg{width:25px;height:25px;stroke-width:1.8}
