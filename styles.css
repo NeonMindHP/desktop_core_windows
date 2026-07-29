@@ -1,6 +1,6 @@
 *{box-sizing:border-box}
 :root{--header-h:68px;--panel-h:64px;--separator-angle:-23deg;--hover-extend:27px;--hover-offset:-27px;--red:#f82b29;--red-hot:#ff8a84}
-html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#111;font-family:"Segoe UI",Arial,sans-serif;color:#fff}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#050505;font-family:"Segoe UI",Arial,sans-serif;color:#fff}
 button{font:inherit}
 .desktop{width:100%;height:100%;background:#050505 url("assets/bild_01_hg.png") center/cover no-repeat}
 .core-header{height:var(--header-h);width:100%;display:flex;align-items:stretch;position:relative;z-index:20;background:linear-gradient(180deg,rgba(24,25,27,.83),rgba(10,10,11,.89) 48%,rgba(3,3,4,.94)),repeating-linear-gradient(118deg,rgba(255,255,255,.026) 0 1px,transparent 1px 17px);border-bottom:1px solid rgba(158,164,170,.70);box-shadow:0 4px 18px rgba(0,0,0,.66),inset 0 -2px 0 rgba(255,255,255,.09),inset 0 1px 0 rgba(255,255,255,.045);backdrop-filter:blur(2px)}
