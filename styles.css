@@ -4,25 +4,22 @@ button{font:inherit}
 .desktop{width:100%;height:100%;background:#050505 url("assets/bild_01_hg.png") center/cover no-repeat}
 .core-header{height:68px;width:100%;display:flex;align-items:stretch;position:relative;z-index:20;background:linear-gradient(180deg,rgba(12,12,13,.78),rgba(4,4,5,.76));border-bottom:1px solid rgba(184,190,196,.58);box-shadow:0 4px 18px rgba(0,0,0,.58),inset 0 -2px 0 rgba(255,255,255,.11);backdrop-filter:blur(2px)}
 .brand,.nav-item,.power-button{border:0;color:#f4f4f4;background:transparent;cursor:pointer}
-.brand{width:248px;min-width:248px;height:64px;display:flex;align-items:center;gap:13px;padding:0 27px;position:relative;text-align:left}
-.brand:after,.nav-item:after,.clock-panel:before,.power-zone:before{content:"";position:absolute;top:0;right:-25px;width:48px;height:64px;transform:skewX(-23deg);border:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.035));pointer-events:none}
-.brand:after,.nav-item:after{background:linear-gradient(to left,rgba(225,230,235,.24) 0 1.3px,transparent 1.3px 2.8px,rgba(225,230,235,.24) 2.8px 4.1px,transparent 4.1px),linear-gradient(120deg,transparent,rgba(255,255,255,.035))}
+.brand{width:248px;min-width:248px;height:64px;display:flex;align-items:center;gap:13px;padding:0 27px;position:relative;text-align:left;overflow:visible}
+.brand:after,.nav-item:after,.clock-panel:after{content:"";position:absolute;z-index:30;top:0;right:-2.05px;width:4.1px;height:64px;transform:skewX(-23deg);transform-origin:center;pointer-events:none;background:linear-gradient(90deg,rgba(225,230,235,.30) 0 1.3px,transparent 1.3px 2.8px,rgba(225,230,235,.30) 2.8px 4.1px);filter:drop-shadow(0 0 1px rgba(255,255,255,.12))}
 .brand img{width:45px;height:45px;object-fit:contain;filter:drop-shadow(0 0 7px rgba(230,20,25,.35))}
 .brand span{font-size:15px;font-weight:600;letter-spacing:.02em;white-space:nowrap}
-.core-nav{height:68px;display:flex;align-items:flex-start;min-width:0;flex:1;position:relative;overflow:visible}
-.nav-item{height:64px;min-width:155px;flex:1;max-width:220px;display:flex;align-items:center;justify-content:center;gap:12px;position:relative;padding:0 25px 0 35px;isolation:isolate;overflow:hidden;clip-path:polygon(27px 0,100% 0,calc(100% - 27px) 100%,0 100%)}
-.nav-item:before{content:"";position:absolute;inset:0;z-index:-1;border:0;background:rgba(255,255,255,.004);transition:background .18s ease,box-shadow .18s ease}
+.core-nav{height:68px;display:flex;align-items:flex-start;min-width:0;flex:1;position:relative;overflow:visible;isolation:isolate}
+.nav-item{height:64px;min-width:155px;flex:1;max-width:220px;display:flex;align-items:center;justify-content:center;gap:12px;position:relative;padding:0 25px 0 35px;isolation:isolate;overflow:visible;clip-path:none}
+.nav-item:before{content:"";position:absolute;inset:0;z-index:-1;border:0;clip-path:polygon(27px 0,100% 0,calc(100% - 27px) 100%,0 100%);background:rgba(255,255,255,.004);transition:background .18s ease,box-shadow .18s ease}
 .nav-item svg,.power-button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .nav-item span{font-size:13px;font-weight:600;letter-spacing:.035em;white-space:nowrap}
 .nav-item:hover:before,.nav-item.is-preview:before{background:linear-gradient(180deg,rgba(75,18,20,.17),rgba(35,8,9,.31));box-shadow:inset 0 -25px 38px rgba(255,25,30,.16),inset 0 -42px 54px rgba(255,25,30,.07)}
 .nav-item.is-active:before{background:rgba(255,255,255,.008)}
 .activity-line{position:absolute;z-index:8;left:0;top:64px;height:4px;width:120px;pointer-events:none;overflow:hidden;clip-path:polygon(9% 0,100% 0,91% 100%,0 100%);background:linear-gradient(90deg,transparent 7%,#ff252c 20%,#ff3b3f 80%,transparent 93%);filter:drop-shadow(0 -6px 8px rgba(255,30,35,.95)) drop-shadow(0 -17px 18px rgba(255,20,25,.42)) drop-shadow(0 -28px 28px rgba(255,20,25,.18));transition:transform .72s cubic-bezier(.22,.74,.22,1),width .72s cubic-bezier(.22,.74,.22,1),opacity .15s ease;will-change:transform,width}
-.clock-panel{width:270px;min-width:270px;height:64px;position:relative;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding:0 52px 0 27px;text-align:right;background:linear-gradient(180deg,rgba(10,10,11,.61),rgba(4,4,5,.69))}
-.clock-panel:before{left:-21px;right:auto;background:linear-gradient(to right,rgba(225,230,235,.24) 0 1.3px,transparent 1.3px 2.8px,rgba(225,230,235,.24) 2.8px 4.1px,transparent 4.1px),linear-gradient(120deg,transparent,rgba(255,255,255,.035))}
+.clock-panel{width:270px;min-width:270px;height:64px;position:relative;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;padding:0 52px 0 27px;text-align:right;overflow:visible;background:linear-gradient(180deg,rgba(10,10,11,.61),rgba(4,4,5,.69))}
 .clock-panel strong{font-size:23.75px;font-weight:400;line-height:1;letter-spacing:.02em}
 .clock-panel span{margin-top:7px;font-size:10.45px;color:#9f9f9f;text-transform:uppercase;letter-spacing:.04em}
 .power-zone{width:118px;min-width:118px;height:64px;position:relative;display:flex;align-items:center;justify-content:center;background:linear-gradient(110deg,rgba(12,12,13,.70),rgba(21,10,11,.72))}
-.power-zone:before{left:-28px;right:auto;background:linear-gradient(to right,rgba(225,230,235,.24) 0 1.3px,transparent 1.3px 2.8px,rgba(225,230,235,.24) 2.8px 4.1px,transparent 4.1px),linear-gradient(120deg,transparent,rgba(255,255,255,.035))}
 .pulse-slash{position:absolute;left:-4px;width:3px;height:40px;top:12px;transform:skewX(-23deg);background:#ff272d;box-shadow:0 0 7px #ff252c,0 0 18px rgba(255,25,30,.8);animation:slashPulse 1.35s ease-in-out infinite}
 .power-button{width:52px;height:52px;display:grid;place-items:center;color:#ff353a;position:relative;transform:translateX(9px)}
 .power-button svg{width:25px;height:25px;stroke-width:1.8}
