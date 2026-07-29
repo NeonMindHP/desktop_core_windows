@@ -12,12 +12,21 @@
   let resumeTimer = null;
   let hoveringNav = false;
 
+  const getHoverExtension = () => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue("--hover-extend");
+    return Number.parseFloat(value) || 0;
+  };
+
   const moveLineTo = item => {
     if (!item || !activityLine || !nav) return;
     const navRect = nav.getBoundingClientRect();
     const itemRect = item.getBoundingClientRect();
-    activityLine.style.width = `${itemRect.width}px`;
-    activityLine.style.transform = `translateX(${itemRect.left - navRect.left}px)`;
+    const extension = getHoverExtension();
+
+    // Der Hover wird um genau eine Schräge erweitert.
+    // Der Laufstrich folgt der unteren Hover-Kante: links erweitert, rechts bündig.
+    activityLine.style.width = `${itemRect.width + extension}px`;
+    activityLine.style.transform = `translateX(${itemRect.left - navRect.left - extension}px)`;
   };
 
   const setPreview = item => {
